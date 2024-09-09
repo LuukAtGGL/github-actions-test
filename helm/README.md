@@ -18,24 +18,24 @@ The runners require 2 separate helm releases:
 
 Controller:
 ```shell
-helm install arc --namespace github --create-namespace oci://ghcr.io/actions/actions-runner-controller-charts/gha-runner-scale-set-controller -f controller.yaml --version 0.9.3
+helm install arc --namespace arc-runners --create-namespace oci://ghcr.io/actions/actions-runner-controller-charts/gha-runner-scale-set-controller -f controller.yaml --version 0.9.3
 ```
 
 Runners set:
 
 ```shell
-helm install github-runner-set --namespace github --create-namespace oci://ghcr.io/actions/actions-runner-controller-charts/gha-runner-scale-set -f runner-set.yaml --version 0.9.3
+helm install github-runner-set --namespace arc-runners --create-namespace oci://ghcr.io/actions/actions-runner-controller-charts/gha-runner-scale-set -f runner-set.yaml --version 0.9.3
 ```
 
 If you want to upgrade values, use the following
 
 Controller:
 ```shell
-helm upgrade arc --namespace github --reuse-values oci://ghcr.io/actions/actions-runner-controller-charts/gha-runner-scale-set-controller -f controller.yaml --version 0.9.3
+helm upgrade arc --namespace arc-runners --reuse-values oci://ghcr.io/actions/actions-runner-controller-charts/gha-runner-scale-set-controller -f controller.yaml --version 0.9.3
 ```
 
 Runners set:
 
 ```shell
-helm upgrade github-runner-set --namespace github --reuse-values oci://ghcr.io/actions/actions-runner-controller-charts/gha-runner-scale-set -f runner-set.yaml --version 0.9.3
+helm upgrade github-runner-set --namespace arc-runners --reuse-values oci://ghcr.io/actions/actions-runner-controller-charts/gha-runner-scale-set -f runner-set.yaml --version 0.9.3
 ```
